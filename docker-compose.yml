@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .                # Use current directory as build context
+      dockerfile: Dockerfile    # Dockerfile path
+    container_name: secure-pki-2fa-container
+
+    ports:
+      - "8080:8080"             # Map container 8080 to host 8080
+
+    environment:
+      - TZ=UTC                  # Set timezone to UTC
+
+    volumes:
+      - seed-data:/data         # Named volume for seed data
+      - cron-output:/cron       # Named volume for cron logs
+      - ./student_private.pem:/app/student_private.pem:ro
+      - ./student_public.pem:/app/student_public.pem:ro
+      - ./instructor_public.pem:/app/instructor_public.pem:ro
+
+    restart: unless-stopped     # Automatically restart if stopped
+
+volumes:
+  seed-data:
+  cron-output:

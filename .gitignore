@@ -1,0 +1,44 @@
+# -------------------------
+# Sensitive or temporary files
+# -------------------------
+
+# Do NOT commit the encrypted seed
+encrypted_seed.txt
+
+# Python cache / compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables or secrets
+.env
+
+# IDE / Editor config files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary data
+*.log
+*.tmp
+
+# -------------------------
+# You MUST commit these (explicit reminder)
+# -------------------------
+# ✅ student_private.pem
+# ✅ student_public.pem
+# ✅ instructor_public.pem
+# ✅ Dockerfile
+# ✅ docker-compose.yml
+# ✅ requirements.txt
+# ✅ .gitattributes
+# ✅ .gitignore
+# ✅ cron/2fa-cron
+# ✅ scripts/
